@@ -1,0 +1,551 @@
+@import "../../variables.scss";
+.home {
+  width: 100%;
+  overflow-x: hidden;
+  .background {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    overflow: hidden;
+    height: 110vh;
+    @include ipad {
+      height: 100vh;
+    }
+  }
+  .navbar-wrapper {
+    position: absolute;
+    width: 100%;
+  }
+
+  .navbar {
+    position: relative;
+    width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    color: white;
+    margin-top: 32px;
+    @include ipad {
+      width: $ipad-container;
+    }
+
+    @include mobile {
+      width: 100%;
+      display: block;
+      position: absolute;
+      z-index: 20;
+      top: 0;
+      margin-top: -20px;
+    }
+    &-left,
+    &-right {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      z-index: 10;
+      @include mobile {
+        display: none;
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        margin: 0 30px;
+        @include mobile {
+          padding: 20px 80px;
+          margin: 0;
+          background-color: #272b2e;
+          &:hover {
+            background-color: #2e3336;
+            cursor: pointer;
+          }
+        }
+
+        a {
+          color: white;
+          font-size: 24px;
+          font-weight: 600;
+          @include ipad {
+            font-size: 19px;
+          }
+        }
+      }
+    }
+
+    &-show {
+      .navbar-left,
+      .navbar-right {
+        @include mobile {
+          display: block;
+        }
+      }
+    }
+    &-center {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      color: white;
+      font-size: 36px;
+      font-weight: 700;
+      text-align: center;
+      top: 0;
+      z-index: -1;
+      @include mobile {
+        margin-top: 30px;
+      }
+    }
+    .hamburger {
+      position: absolute;
+      display: none;
+      left: 0;
+      top: 0;
+      z-index: 11;
+      margin-top: 36px;
+      @include mobile {
+        display: block;
+        padding-left: 20px;
+      }
+      img {
+        z-index: 11;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .meteor-left {
+    position: absolute;
+    left: -50px;
+    bottom: 0;
+    z-index: -1;
+    @include mobile {
+      display: none;
+    }
+  }
+  .meteor-right {
+    position: absolute;
+    right: -50px;
+    bottom: 0;
+    z-index: -1;
+    @include mobile {
+      display: none;
+    }
+  }
+  .hero {
+    @include container;
+    text-align: center;
+    color: white;
+    margin-top: 60px;
+    position: relative;
+    @include ipad {
+      width: $ipad-container;
+    }
+    @include mobile {
+      margin-top: 130px;
+      width: $mobile-container;
+    }
+    .title {
+      color: white;
+      font-size: 29.71px;
+      font-weight: 800;
+      @include mobile {
+        font-size: 20.17px;
+      }
+    }
+    .subtitle {
+      color: white;
+      font-size: 14px;
+      font-weight: 400;
+      margin-top: 16px;
+      @include mobile {
+        font-size: 7.06px;
+      }
+    }
+    .subtitle-2 {
+      display: block;
+      @include desktop {
+        display: inline;
+      }
+    }
+  }
+  .rocket-img {
+    width: 100%;
+    z-index: 1;
+    bottom: -3px;
+    position: absolute;
+    @include ipad {
+      width: 1700px;
+      left: 50%;
+      margin: 0 0 0 -850px;
+    }
+    @include mobile {
+      width: 1500px;
+      left: 50%;
+      margin: 0 0 0 -750px;
+    }
+  }
+  .rocket-btn-wrapper {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    z-index: 3;
+    margin-bottom: 120px;
+    @include ipad {
+      margin-bottom: 60px;
+    }
+  }
+  .rocket-btn {
+    background-color: rgba(251, 176, 59, 1);
+    border: none;
+    border-radius: 16px;
+    color: #1a2b35;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 12px 112px;
+    transition: 0.2s;
+    cursor: pointer;
+    &:hover {
+      color: #ffffff;
+      background-color: #ff9436;
+      transform: scale(1.2);
+    }
+  }
+
+  .content-section {
+    overflow: hidden;
+    width: 100%;
+    background-color: rgba(250, 218, 193, 1);
+    position: relative;
+    .content {
+      @include container;
+      background-color: rgba(250, 218, 193, 1);
+      padding-top: 109px;
+      padding-bottom: 100px;
+      padding-left: 20px;
+      padding-right: 20px;
+      @include ipad {
+        width: $ipad-container;
+        padding-bottom: 100px;
+      }
+      @include mobile {
+        width: $mobile-container;
+        padding-bottom: 0px;
+      }
+      .lesson {
+        width: 100%;
+        background-color: rgba(250, 218, 193, 1);
+        .title {
+          color: #1a2b35;
+          font-size: 40px;
+          font-weight: 700;
+          @include mobile {
+            font-size: 16px;
+          }
+        }
+        .subtitle {
+          color: #1a2b35;
+          font-size: 20px;
+          font-weight: 400;
+          margin-bottom: 100px;
+          word-wrap: break-word;
+          @include mobile {
+            font-size: 14px;
+            margin-bottom: 40px;
+          }
+        }
+      }
+      .stars {
+        display: flex;
+        justify-content: space-between;
+        gap: 80px;
+        margin-bottom: 70px;
+        @include mobile {
+          gap: 20px;
+          margin-bottom: 30px;
+        }
+        .star {
+          width: 100%;
+          background-color: #1a2b35;
+          text-align: center;
+          border-radius: 16px;
+          overflow: hidden;
+          padding: 42px 27px;
+          box-shadow:
+            0 2px 8px 0 rgba(0, 0, 0, 0.2),
+            0 4px 12px 0 rgba(0, 0, 0, 0.19);
+          z-index: 10;
+          .img-star {
+            width: 100%;
+            height: auto;
+            img {
+              width: 100%;
+              height: auto;
+              transition: 0.4s;
+              &:hover {
+                transform: scale(1.2);
+                cursor: pointer;
+              }
+            }
+          }
+          @include mobile {
+            padding: 20px 10px;
+          }
+          .title {
+            margin-top: 33px;
+            color: white;
+            font-size: 20px;
+            font-weight: 400;
+            text-align: center;
+            @include mobile {
+              font-size: 6.66px;
+            }
+          }
+          .subtitle {
+            margin-top: 10px;
+            color: white;
+            font-size: 14px;
+            font-weight: 400;
+            text-align: center;
+            @include mobile {
+              font-size: 6.66px;
+              display: none;
+            }
+          }
+        }
+      }
+      .complete-bar-section {
+        margin-bottom: 160px;
+        @include mobile {
+          margin-bottom: 35px;
+        }
+        .complete-bar-label {
+          color: #272b2e;
+          font-size: 20px;
+          font-weight: 400;
+          margin-bottom: 11px;
+          @include mobile {
+            font-size: 6.66px;
+          }
+        }
+        .complete-bar {
+          width: 100%;
+          background-color: #d9d9d9;
+          height: 15px;
+          overflow: hidden;
+          border-radius: 11px;
+          .complete-percent {
+            background-color: #fbb03b;
+            height: 100%;
+          }
+          @include mobile {
+            border-radius: 6px;
+            height: 6px;
+          }
+        }
+      }
+      .explores {
+        position: relative;
+        padding-top: 70px;
+        .explore {
+          position: relative;
+          width: 100%;
+          overflow: hidden;
+          border-radius: 50px;
+          margin-bottom: 97px;
+          @include mobile {
+            border-radius: 16px;
+            margin-bottom: 34px;
+          }
+          img {
+            width: 100%;
+          }
+          .explore-content {
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin-top: 56px;
+            margin-right: 53px;
+            z-index: 1;
+            text-align: right;
+            @include mobile {
+              margin-right: 15px;
+            }
+            .title {
+              color: white;
+              font-size: 63.42px;
+              font-weight: 700;
+              margin-bottom: 20px;
+              margin-top: 24px;
+              white-space: pre-wrap;
+              word-wrap: break-word;
+              @include ipad {
+                font-size: 50.24px;
+                margin-top: 0px;
+              }
+              @include mobile {
+                font-size: 21.33px;
+                margin-top: -30px;
+                margin-bottom: 7px;
+              }
+            }
+            .title-small {
+              font-size: 47.57px;
+              margin-top: 0px;
+              @include ipad {
+                font-size: 37.68px;
+                margin-top: -8px;
+              }
+              @include mobile {
+                font-size: 16px;
+                margin-top: -36px;
+                margin-bottom: 7px;
+              }
+            }
+            .explore-btn {
+              background-color: rgba(251, 176, 59, 1);
+              border: 1px solid rgba(251, 176, 59, 1);
+              border-radius: 16px;
+              color: #1a2b35;
+              font-size: 21.83px;
+              font-weight: 700;
+              padding: 10px 52px;
+              transition: 0.2s;
+              @include ipad {
+                font-size: 17.29px;
+              }
+              @include mobile {
+                font-size: 7.34px;
+                padding: 3px 18px;
+                border-radius: 8px;
+              }
+              // เริ่มการสำรวจ
+              &:hover {
+                cursor: pointer;
+                color: #ffffff;
+                border: 1px solid #ff9436;
+                background-color: #ff9436;
+                transform: scale(1.1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer {
+    position: relative;
+    overflow: hidden;
+    background-color: #040b14;
+    .footer-content {
+      @include container;
+      @include ipad {
+        width: $ipad-container;
+      }
+      @include mobile {
+        width: $mobile-container;
+      }
+      .footer-flex {
+        display: flex;
+        justify-content: space-between;
+        @include mobile {
+          display: block;
+        }
+      }
+      padding: 32px 0px;
+      .title {
+        color: #fbb03b;
+        font-size: 48px;
+        font-weight: 700;
+        @include mobile {
+          font-size: 35.79px;
+        }
+      }
+      .subtitle {
+        color: white;
+        font-size: 24px;
+        font-weight: 600;
+        @include mobile {
+          font-size: 17.89px;
+        }
+      }
+      .right-side {
+        display: flex;
+        @include mobile {
+          display: block;
+          margin-top: 53.84px;
+        }
+      }
+      .column {
+        padding-left: 56px;
+        text-align: right;
+        @include mobile {
+          text-align: left;
+          padding-left: 0px;
+          margin-top: 16px;
+        }
+        .column-title {
+          color: white;
+          font-size: 24px;
+          font-weight: 600;
+          margin-bottom: 16px;
+          @include mobile {
+            font-size: 16px;
+          }
+          @include mobile {
+            text-align: left;
+            padding-left: 0px;
+            margin-bottom: 4px;
+            color: rgba(251, 176, 59, 1);
+          }
+        }
+        .column-link {
+          color: white;
+          font-size: 24px;
+          font-weight: 400;
+          a {
+            text-decoration: none;
+            color: white;
+          }
+          @include mobile {
+            font-size: 14px;
+          }
+        }
+      }
+      .privacy {
+        margin-top: 75px;
+        text-align: center;
+        color: white;
+        font-size: 16px;
+        font-weight: 400;
+        @include mobile {
+          font-size: 12px;
+          margin-top: 21px;
+        }
+      }
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.sample-btn {
+  background-color: rgba(251, 176, 59, 1);
+  border: 1px solid rgba(251, 176, 59, 1);
+  border-radius: 16px;
+  color: #1a2b35;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 12px 112px;
+  transition: 0.2s;
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(255, 157, 0);
+    border: 1px solid rgb(255, 157, 0);
+  }
+}

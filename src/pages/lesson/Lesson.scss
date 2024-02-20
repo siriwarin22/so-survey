@@ -1,0 +1,340 @@
+@import "../../variables.scss";
+.lesson {
+  width: 100vw;
+  width: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  .navbar {
+    width: 1080px;
+    margin: 0 auto;
+    margin-top: 21px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    position: relative;
+    &-left,
+    &-right {
+      z-index: 999;
+      list-style: none;
+      display: flex;
+      margin: 0;
+      @include mobile {
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 0px;
+      }
+      li {
+        margin: 0 32px;
+        a {
+        }
+      }
+    }
+    &-right {
+      li {
+        @include mobile {
+          margin: 0;
+          margin-right: 20px;
+        }
+        a,
+        .sound-volumne {
+          display: flex;
+          flex-direction: column;
+          align-content: center;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          font-size: 16px;
+          font-weight: 400;
+          @include mobile {
+            font-size: 8.77px;
+            img {
+              width: 18px;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+    &-left {
+      li {
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #fbb03b;
+          font-size: 24px;
+          font-weight: 400;
+          @include mobile {
+            font-size: 16px !important;
+          }
+        }
+        img {
+          margin-right: 22px;
+          @include mobile {
+            width: 16px;
+            height: 16px;
+            margin-right: 10px !important;
+          }
+        }
+      }
+    }
+
+    &-center {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      color: white;
+      font-size: 36px;
+      font-weight: 700;
+      text-align: center;
+      @include mobile {
+        display: none;
+      }
+    }
+
+    @include ipad {
+      width: $ipad-container;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    @include mobile {
+      width: 100% !important;
+      margin-top: 0px !important;
+      padding-left: 0px;
+      padding-right: 0px;
+      margin: 0;
+    }
+  }
+
+  .rocket-decoration {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    @include ipad {
+      width: 110px;
+      height: auto;
+    }
+  }
+  .buttons {
+    .previous-section {
+      position: absolute;
+      bottom: 50%;
+      margin-left: 46px;
+      width: 69px;
+      height: 135px;
+    }
+    .next-section {
+      position: absolute;
+      bottom: 50%;
+      right: 0;
+      margin-right: 46px;
+      width: 69px;
+      height: 135px;
+    }
+    @include mobile {
+      display: none;
+    }
+  }
+  .lesson-content {
+    width: 1080px;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    @include ipad {
+      width: $ipad-container;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    @include mobile {
+      width: 100%;
+      max-width: $mobile-container;
+    }
+    .subtitle {
+      color: #fbb03b;
+      font-size: 20px;
+      font-weight: 400;
+      text-align: center;
+      margin-top: 367px;
+      margin-bottom: 29px;
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+    .rocket-bar-section {
+      width: 560px;
+      height: 7.64px;
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      position: relative;
+      @include mobile {
+        width: 100%;
+      }
+      .rocket-bar {
+        width: 100%;
+        @include mobile {
+          width: 100%;
+        }
+      }
+      .rocket-bar-item {
+        position: absolute;
+        left: 0;
+        top: -19px;
+        z-index: 3;
+        @include mobile {
+          top: -10px;
+          width: 40px;
+        }
+      }
+      .rocket-bar-background {
+        width: 0%;
+        height: 7px;
+        position: absolute;
+        left: 0;
+        top: -4px;
+        background-color: #fbb03b;
+        border-radius: 6px;
+        @include mobile {
+          top: -1px;
+          height: 4px;
+        }
+      }
+    }
+    .text {
+      background-color: rgba(26, 43, 53, 1);
+      color: white;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 28px;
+      padding: 25px 53px;
+      border-radius: 24px;
+      position: relative;
+      margin-bottom: 16px;
+      @include ipad {
+        font-size: 16.62px;
+      }
+      @include mobile {
+        font-size: 10px;
+        line-height: 16px;
+        padding: 18px 40px;
+        border-radius: 16px;
+        margin-bottom: 42px;
+        padding-bottom: 16px;
+      }
+    }
+    .next-section {
+      display: flex;
+      align-items: center;
+      float: right;
+      color: #eeeeee;
+      font-size: 16px;
+      font-weight: 400;
+      margin-bottom: 30px;
+      @include ipad {
+        font-size: 14px !important;
+      }
+      img {
+        margin-left: 13px;
+      }
+      @include mobile {
+        display: none;
+      }
+    }
+    .next-section-mobile {
+      display: none;
+      color: #a6a6a6;
+      font-size: 12px;
+      font-weight: 400;
+      bottom: 0;
+      margin: 0 auto;
+      align-items: center;
+      justify-content: center;
+      img {
+        margin-left: 10px;
+        width: 13px;
+        height: 13px;
+      }
+      @include mobile {
+        display: flex;
+        text-align: center;
+        padding-top: 16px;
+      }
+    }
+  }
+
+  .meteorite-lesson-1 {
+    position: absolute;
+    left: 15%;
+    bottom: -40%;
+    z-index: 1;
+    @include mobile {
+      left: 7%;
+      width: 40px;
+    }
+  }
+  .meteorite-lesson-2 {
+    position: absolute;
+    right: 15%;
+    bottom: -10%;
+    z-index: 1;
+    @include mobile {
+      right: 7%;
+      width: 50px;
+    }
+  }
+  @keyframes floatAndRotate1 {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    100% {
+      transform: translateY(-140vh) rotate(-440deg);
+    }
+  }
+  @keyframes floatAndRotate2 {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    100% {
+      transform: translateY(-110vh) rotate(400deg);
+    }
+  }
+
+  .meteorite-lesson-1 {
+    position: absolute;
+    animation: floatAndRotate1 70s linear infinite; /* Adjust the duration as needed */
+  }
+  .meteorite-lesson-2 {
+    position: absolute;
+    animation: floatAndRotate2 65s linear infinite; /* Adjust the duration as needed */
+  }
+  .sound-volumne {
+    cursor: pointer;
+  }
+  /*
+  .meteorite-lesson-1,
+  .meteorite-lesson-2 {
+    position: absolute;
+    animation: floatAndRotate 5s linear infinite;
+  }
+
+  @keyframes floatAndRotate {
+    0% {
+      transform: translateY(100%) rotate(0deg); 
+    }
+    100% {
+      transform: translateY(0%) rotate(360deg); 
+    }
+  }
+  */
+}
